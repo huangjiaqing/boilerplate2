@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
 const resolve = require('path').resolve;
 
 const root = (dir='') => resolve(__dirname, `../../${dir}`);
@@ -38,9 +37,6 @@ module.exports = {
       filename: 'index.html',
       template: resolve(__dirname, '../template/index.html'),
       inject: true
-    }),
-    new ManifestPlugin({
-      fileName: 'asset-manifest.json'
     })
   ],
 };

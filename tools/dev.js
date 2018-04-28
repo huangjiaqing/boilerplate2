@@ -3,7 +3,7 @@ import webpack from 'webpack';
 import stream from 'stream';
 import dev from 'webpack-dev-middleware';
 import hot from 'webpack-hot-middleware';
-import config from '../config/webpack/webpack.dev';
+import config from './webpack/webpack.dev';
 import fallback from './fallback';
 
 const app = new Koa();
