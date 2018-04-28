@@ -4,17 +4,17 @@
   "description": "a small enterprise collaboration tools",
   "main": "index.js",
   "scripts": {
-    "start": "node start.js",
+    "dev": "cross-env NODE_ENV=development node start.js",
     "clean": "rm -rf dist",
     "build": "npm run clean && node tools/build",
     "lint:react": "eslint client/**",
     "lint:node": "eslint server/**",
+    "start": "cross-env NODE_ENV=production node start.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Chia Ching",
+  "author": "GaKing",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^2.5.9",
     "koa": "^2.5.0",
     "koa-router": "^7.4.0",
     "koa-static": "^4.0.2",
@@ -27,11 +27,14 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.1.4",
     "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
     "html-webpack-plugin": "^3.2.0",
     "ignore-loader": "^0.1.2",
     "koa-logger": "^3.2.0",
@@ -40,8 +43,10 @@
     "webpack-cli": "^2.0.15",
     "webpack-dev-middleware": "^3.1.2",
     "webpack-hot-middleware": "^2.22.1",
-    "webpack-manifest-plugin": "^2.0.1",
-    "webpack-merge": "^4.1.2",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-merge": "^4.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huangjiaqing/coopteam.git"
   }
 }
