@@ -9,7 +9,7 @@ module.exports = merge(baseConfig, {
   entry: {
     app: [
       'webpack-hot-middleware/client',
-      './client/app.js'
+      './client/index.js'
     ]
   },
 

@@ -10,7 +10,7 @@ module.exports = merge(baseConfig, {
 
   entry: {
     app: [
-      './client/app.js'
+      './client/index.js'
     ],
   },
 

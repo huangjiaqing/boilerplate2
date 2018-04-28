@@ -1,19 +1,25 @@
 import React from 'react';
-import ReactDom from 'react-dom';
-import App from './router';
+import {
+  BrowserRouter,
+  Switch,
+  Route
+} from 'react-router-dom';
+import routes from './routes';
 
-const render = (Component) => {
-  ReactDom.render(
-    <Component />,
-    document.getElementById('root')
-  );
-};
+export default class Router extends React.Component {
 
-render(App);
+  render() {
 
-if (module.hot) {
-  module.hot.accept(['./router'], async () => {
-    const { default: next } = await import('./router');
-    render(next);
-  });
+    return (
+      <BrowserRouter>
+        <Switch>
+          {
+            routes.map(({name, path, exact=true, component}) => (
+              <Route key={name} path={path} exact={exact} component={component} />
+            ))
+          }
+        </Switch>
+      </BrowserRouter>
+    );
+  }
 }
