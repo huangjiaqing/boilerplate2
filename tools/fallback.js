@@ -10,7 +10,7 @@ const evaluateRewriteRule = (parsedUrl, match, rule) => {
   return rule({
     parsedUrl,
     match
-  })
+  });
 };
 
 const acceptsHtml = (header) => (
@@ -114,16 +114,12 @@ const historyApiFallback = (options={}) => {
       reqUrl,
       'to',
       rewriteTarget
-    )
+    );
 
     ctx.url = rewriteTarget;
 
     return next();
-  }
-};
-
-const use = (app) => {
-  app.use(historyApiFallback());
+  };
 };
 
 export default historyApiFallback;
