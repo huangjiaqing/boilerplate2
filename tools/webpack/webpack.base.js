@@ -29,11 +29,6 @@ module.exports = {
         include: [root('client'), root('test')],
         use: ['happypack/loader?id=babel']
       },
-      {
-        test: /\.css$/,
-        include: [root('client'), root('node_modules/normalize.css')],
-        use: ['happypack/loader?id=css']
-      }
     ]
   },
 
@@ -46,23 +41,6 @@ module.exports = {
     new HappyPack({
       id: 'babel',
       loaders: ['babel-loader?cacheDirectory']
-    }),
-    new HappyPack({
-      id: 'css',
-      loaders: [
-        'style-loader',
-        {
-          loader: 'css-loader',
-          options: {
-            sourceMap: true,
-            importLoaders: 1,
-            module: true,
-            camelCase: true,
-            localIdentName: '[name]__[local]__[hash:base64:8]'
-          },
-        },
-        'postcss-loader'
-      ],
     }),
   ],
 };
