@@ -31,4 +31,4 @@ const useMiddleware = (app) => {
     console.log('\n==> 🌎  Server listen on 4455 ..');
   });
 
-})(); 
+})();

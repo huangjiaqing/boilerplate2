@@ -2,8 +2,7 @@ import React from 'react';
 import {
   BrowserRouter,
   Switch,
-  Route,
-  Redirect
+  Route
 } from 'react-router-dom';
 
 const Hello = () => (<div>你好哦哦哦哈哈哈哈</div>);
