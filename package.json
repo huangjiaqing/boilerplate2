@@ -1,0 +1,48 @@
+{
+  "name": "coopteam",
+  "version": "1.0.0",
+  "description": "a small enterprise collaboration tools",
+  "main": "index.js",
+  "scripts": {
+    "start": "node start.js",
+    "pre:build": "rm -rf dist",
+    "build:brower": "npm run pre:build && webpack --config ./config/webpack/webpack.prod.js",
+    "build:server": "npm run pre:build && webpack --config ./config/webpack/webpack.server.js",
+    "lint:react": "eslint client/**",
+    "lint:node": "eslint server/**",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chia Ching",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.9",
+    "koa": "^2.5.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^4.0.2",
+    "koa-views": "^6.1.4",
+    "ramda": "^0.25.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "html-webpack-plugin": "^3.2.0",
+    "ignore-loader": "^0.1.2",
+    "koa-logger": "^3.2.0",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15",
+    "webpack-dev-middleware": "^3.1.2",
+    "webpack-hot-middleware": "^2.22.1",
+    "webpack-manifest-plugin": "^2.0.1",
+    "webpack-merge": "^4.1.2",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
