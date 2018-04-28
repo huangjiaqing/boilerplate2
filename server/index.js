@@ -1,4 +1,4 @@
-// require('./dev');
+require('../tools/dev');
 const isProductionMode = (process.env.NODE_ENV === 'production');
 const app = isProductionMode ? require('./app.prod') : require('./app.dev');
 

@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node start.js",
-    "pre:build": "rm -rf dist",
-    "build:brower": "npm run pre:build && webpack --config ./config/webpack/webpack.prod.js",
-    "build:server": "npm run pre:build && webpack --config ./config/webpack/webpack.server.js",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && node tools/build",
     "lint:react": "eslint client/**",
     "lint:node": "eslint server/**",
     "test": "echo \"Error: no test specified\" && exit 1"

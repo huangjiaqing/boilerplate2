@@ -6,7 +6,7 @@ import {
   Redirect
 } from 'react-router-dom';
 
-const Hello = () => (<div>你好哦</div>);
+const Hello = () => (<div>你好哦哦哦哈哈哈哈</div>);
 const Error = () => (<div>错误</div>);
 const Api = () => (<div>Api</div>);
 

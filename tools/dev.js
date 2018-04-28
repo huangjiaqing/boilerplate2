@@ -1,9 +1,12 @@
+import Koa from 'koa';
 import webpack from 'webpack';
+import stream from 'stream';
 import dev from 'webpack-dev-middleware';
 import hot from 'webpack-hot-middleware';
-import stream from 'stream';
-import config from '../../config/webpack/webpack.dev';
+import config from '../config/webpack/webpack.dev';
+import fallback from './fallback';
 
+const app = new Koa();
 const compiler = webpack(config);
 
 const devMiddleware = (compiler, opts) => {
@@ -14,7 +17,7 @@ const devMiddleware = (compiler, opts) => {
           ctx.body = content
       },
       setHeader: (name, value) => {
-          ctx.set(name, value)
+        ctx.set(name, value)
       }
     }, next);
   };
@@ -28,18 +31,21 @@ const hotMiddleware = (compiler, opts) => {
       await middleware(ctx.req, {
           write: pt.write.bind(pt),
           writeHead: (status, headers) => {
-            ctx.status = status;
-            ctx.set(headers);
+            ctx.status = status
+            ctx.set(headers)
           }
       }, next);
   };
 };
 
-export const devServer = (app) => {
-  if (process.env.NODE_ENV === 'development') {
-    app.use(devMiddleware(compiler, {
-      publicPath: config.output.publicPath
-    }));
-    app.use(hotMiddleware(compiler));
-  }
-};
+app.use(fallback());
+
+app.use(devMiddleware(compiler, {
+  publicPath: config.output.publicPath
+}));
+
+app.use(hotMiddleware(compiler));
+
+app.listen(3000, () => {
+  console.log('\n 🌍 => Coopteam Front-end listen on 3000');
+})
