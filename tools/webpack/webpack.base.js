@@ -27,6 +27,24 @@ module.exports = {
         test: /\.js$/,
         include: [root('client'), root('test')],
         use: ['babel-loader?cacheDirectory']
+      },
+      {
+        test: /\.css$/,
+        include: [root('client'), root('node_modules/normalize.css')],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              importLoaders: 1,
+              module: true,
+              camelCase: true,
+              localIdentName: '[name]__[local]__[hash:base64:8]'
+            },
+          },
+          'postcss-loader',
+        ],
       }
     ]
   },
