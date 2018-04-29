@@ -2,7 +2,7 @@ import Router from 'koa-router';
 
 const r = new Router();
 
-r.get('/api', (ctx) => {
+r.get('/api', async (ctx) => {
   ctx.body = {
     msg: 'yohu!'
   };
