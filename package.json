@@ -29,6 +29,7 @@
   "dependencies": {
     "antd": "^3.4.4",
     "classnames": "^2.2.5",
+    "flyio": "^0.5.5",
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
     "koa-logger": "^3.2.0",
