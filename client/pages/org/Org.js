@@ -1,12 +1,26 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import Header from 'components/header';
+import styles from './Org.css';
 
-export default class Org extends Component {
+export default class Org extends PureComponent {
+
+  
 
   render() {
 
     return (
-      <div>
-        组织页
+      <div className={styles.org}>
+        <Header />
+        {this.renderMain()}
+      </div>
+    );
+  }
+
+  renderMain() {
+
+    return (
+      <div className={styles.main}>
+        组织页主体
       </div>
     );
   }
