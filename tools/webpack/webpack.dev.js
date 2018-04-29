@@ -15,6 +15,7 @@ module.exports = merge(baseConfig, {
     app: [
       'webpack-hot-middleware/client',
       'normalize.css',
+      './client/utils/customize.css',
       './client/index.js'
     ]
   },

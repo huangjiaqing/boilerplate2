@@ -12,6 +12,7 @@ module.exports = merge(baseConfig, {
   entry: {
     app: [
       'normalize.css',
+      './client/utils/customize.css',
       './client/index.js'
     ],
   },
