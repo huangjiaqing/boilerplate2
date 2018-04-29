@@ -22,13 +22,13 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
-      components: root('client/components'),
-      constants: root('client/constants'),
-      services: root('client/services'),
-      assets: root('client/assets'),
       pages: root('client/pages'),
       store: root('client/store'),
       utils: root('client/utils'),
+      assets: root('client/assets'),
+      services: root('client/services'),
+      constants: root('client/constants'),
+      components: root('client/components'),
     },
   },
 
