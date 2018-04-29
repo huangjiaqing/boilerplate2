@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import Fly from '../../../tools/request';
 import { Layout, Icon } from 'antd';
 import styles from './Header.css';
 
@@ -8,8 +7,7 @@ const { Header } = Layout;
 export default class extends PureComponent {
 
   componentDidMount() {
-    const fly = new Fly();
-    fly.get('http://localhost:4455/api').then(res => console.log(res));
+
   }
 
   render() {
