@@ -1,3 +1,8 @@
 html {
   font-size: 12px;
 }
+
+:global(.click-btn) {
+  user-select: none;
+  cursor: pointer;
+}

@@ -7,6 +7,12 @@
   height: 100%;
   display: flex;
   align-items: center;
+
+  & > section {
+    line-height: 0;
+    display: flex;
+    align-items: center;
+  }
 }
 
 .org {
@@ -25,4 +31,19 @@
   color: var(--text-color);
   font-size: 1.5rem;
   padding: 0 1.2rem;
+}
+
+.search {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.addTask {
+  font-size: 1.6rem;
+  margin-left: 1.5rem;
+  color: #1890ff;
+}
+
+.me {
+  padding-right: 1.2rem;
 }

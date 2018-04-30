@@ -36,6 +36,7 @@ module.exports = merge(baseConfig, {
     new HappyPack({
       id: 'css',
       loaders: [
+        'css-hot-loader',
         'style-loader',
         {
           loader: 'css-loader',
