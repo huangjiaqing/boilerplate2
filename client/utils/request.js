@@ -1,5 +1,4 @@
 import fly from 'flyio';
-// import { message } from 'antd';
 
 fly.config = {
   ...fly.conifg,

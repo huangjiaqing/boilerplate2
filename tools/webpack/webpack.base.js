@@ -40,7 +40,7 @@ module.exports = {
         use: ['happypack/loader?id=babel']
       },
       {
-        test: /\.css/,
+        test: /\.css$/,
         include: [root('node_modules/antd')],
         use: ['happypack/loader?id=antd'],
       },

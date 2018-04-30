@@ -1,23 +1,36 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import className from 'classnames';
 import fly from 'utils/request';
-import { Layout, Icon, Input, Avatar, message } from 'antd';
+import { Layout, Icon, Input, Avatar, Modal } from 'antd';
 import styles from './Header.css';
 
 const { Header } = Layout;
 const { Search } = Input;
 
-export default class extends PureComponent {
+export default class extends Component {
+
+  state = {
+    isShow: false
+  }
 
   componentDidMount() {
     fly.get('/api').then(res => console.log(res));
   }
 
   handleClick = () => {
-    message.error('hahah');
+    this.setState({
+      isShow: true
+    });
+  }
+
+  close = () => {
+    this.setState({
+      isShow: false
+    });
   }
 
   render() {
+    const { isShow } = this.state;
 
     return (
       <Header
@@ -30,6 +43,19 @@ export default class extends PureComponent {
         }}
       >
         <div className={styles.header}>
+          {
+            isShow
+              ? (
+                <Modal
+                  title={'hhh'}
+                  visible={isShow}
+                  onOk={this.close}
+                >
+                  heeh
+                </Modal>
+              )
+              : null
+          }
           {this.renderOrg()}
           {this.renderSearch()}
           {this.renderMe()}
@@ -45,7 +71,7 @@ export default class extends PureComponent {
         <span className={styles.orgIcon}>
           <Icon type="bars" className="click-btn" />
         </span>
-        <h2>
+        <h2 onClick={this.handleClick}>
           油车青年
         </h2>
       </section>
