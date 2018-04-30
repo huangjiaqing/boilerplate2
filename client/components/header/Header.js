@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import className from 'classnames';
 import fly from 'utils/request';
 import { Layout, Icon, Input, Avatar, Modal } from 'antd';
@@ -7,7 +7,7 @@ import styles from './Header.css';
 const { Header } = Layout;
 const { Search } = Input;
 
-export default class extends Component {
+export default class extends PureComponent {
 
   state = {
     isShow: false
@@ -18,6 +18,7 @@ export default class extends Component {
   }
 
   handleClick = () => {
+    // message.info('哈哈哈哈哈');
     this.setState({
       isShow: true
     });
@@ -50,6 +51,7 @@ export default class extends Component {
                   title={'hhh'}
                   visible={isShow}
                   onOk={this.close}
+                  onCancel={this.close}
                 >
                   heeh
                 </Modal>

@@ -15,6 +15,7 @@ module.exports = merge(baseConfig, {
       './client/utils/customize.css',
       './client/index.js'
     ],
+    ventor: ['react', 'react-dom', 'antd', 'ramda']
   },
 
   output: {
