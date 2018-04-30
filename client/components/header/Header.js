@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { get } from 'utils/request';
 import { Layout, Icon } from 'antd';
 import styles from './Header.css';
 
@@ -7,7 +8,7 @@ const { Header } = Layout;
 export default class extends PureComponent {
 
   componentDidMount() {
-
+    get('/api').then(res => console.log(res));
   }
 
   render() {
