@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import className from 'classnames';
-import { get } from 'utils/request';
-import { Layout, Icon, Input, Avatar } from 'antd';
+import fly from 'utils/request';
+import { Layout, Icon, Input, Avatar, message } from 'antd';
 import styles from './Header.css';
 
 const { Header } = Layout;
@@ -10,7 +10,11 @@ const { Search } = Input;
 export default class extends PureComponent {
 
   componentDidMount() {
-    get('/api').then(res => console.log(res));
+    fly.get('/api').then(res => console.log(res));
+  }
+
+  handleClick = () => {
+    message.error('hahah');
   }
 
   render() {
@@ -58,6 +62,7 @@ export default class extends PureComponent {
           style={{ width: 240 }}
         />
         <Icon
+          onClick={this.handleClick}
           type="plus-circle"
           className={className(styles.addTask, 'click-btn')}
         />
